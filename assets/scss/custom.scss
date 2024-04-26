@@ -1,0 +1,173 @@
+@font-face {
+    font-family: "Averta";
+    src: url("~assets/fonts/averta/Averta-Bold.eot") format("embedded-opentype"),
+    url("~assets/fonts/averta/Averta-Bold.ttf") format("truetype"),
+    url("~assets/fonts/averta/Averta-Bold.woff") format("woff"),
+    url("~assets/fonts/averta/Averta-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Averta";
+    src: url("~assets/fonts/averta/Averta-Semibold.eot") format("embedded-opentype"),
+    url("~assets/fonts/averta/Averta-Semibold.ttf") format("truetype"),
+    url("~assets/fonts/averta/Averta-Semibold.woff") format("woff"),
+    url("~assets/fonts/averta/Averta-Semibold.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Averta";
+    src: url("~assets/fonts/averta/Averta-Regular.eot") format("embedded-opentype"),
+    url("~assets/fonts/averta/Averta-Regular.ttf") format("truetype"),
+    url("~assets/fonts/averta/Averta-Regular.woff") format("woff"),
+    url("~assets/fonts/averta/Averta-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+html,body{
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: 'Averta', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    color: #000;
+    text-align: left;
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+}
+
+$fonts: (12: .75rem,
+    14: .875rem,
+    16: 1rem,
+    18: 1.125rem,
+    20: 1.25rem,
+    24: 1.5rem,
+    32: 2rem);
+
+@each $pixel,
+$rem in $fonts {
+    .font-#{$pixel} {
+        font-size: $rem !important;
+    }
+}
+
+@each $bp-name,
+$bp-pixels in $grid-breakpoints {
+
+    //looping through xs, sm, md, lg, xl and their pixel values
+    @each $pixel,
+    $rem in $fonts {
+        @media (min-width: $bp-pixels) {
+
+            //only works if the screen is wider than this
+            .font-#{$bp-name}-#{$pixel} {
+                //names like w-md-40
+                font-size: $rem !important;
+            }
+        }
+    }
+}
+// overrides
+
+a {
+    color: #0073c2;
+    text-decoration: none;
+    background-color: transparent;
+    font-weight: 400;
+
+    &:hover {
+        color: #000;
+        text-decoration: none;
+    }
+}
+.exact-active-link {
+    color: #000;
+    border-bottom: 2px solid black;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #2E334D;
+    font-weight: 500;
+    
+    &:hover {
+        color: #0073c2;
+    }
+}
+
+.btn {
+    font-weight: 500;
+    padding: 0.563rem 1.188rem;
+    transition: all 0.15s ease-in-out;
+    &:focus, &:active {
+        box-shadow: none !important;
+    }
+}
+
+.btn-default {
+    color: #000;
+    background-color: #fff;
+    border-color: #D8DBEB;
+    box-shadow: none;
+
+    &:hover {
+        color: #000;
+        background-color: #EBEDF5;
+        border-color: #D8DBEB;
+    }
+}
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #0092e4;
+    border-color: #0092e4;
+    box-shadow: none;
+
+    &:hover {
+        color: #fff;
+        background-color: #0073c2;
+        border-color: #0073c2;
+    }
+}
+
+.btn-rounded {
+    border-radius: 50px !important;
+}
+
+.btn-zero {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none !important;
+    font-weight: 500;
+}
+.btn-sm {
+    padding: 0.25rem 0.94rem;
+    font-size: .875rem;
+    line-height: 1.5rem;
+    border-radius: 4px;
+}
+
+.btn-sm.btn-icon, .btn-group-sm >.btn-icon.btn {
+    padding: .25rem;
+    width: calc(2px + 2rem);
+    height: calc(2px + 2rem);
+}
+
+.asset-dd {
+    width: 40px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
