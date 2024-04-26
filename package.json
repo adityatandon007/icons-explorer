@@ -20,6 +20,7 @@
     "vue-observe-visibility": "^1.0.0"
   },
   "devDependencies": {
+    "@nuxtjs/vercel-builder": "^0.25.0",
     "babel-core": "7.0.0-bridge.0",
     "sass": "^1.37.5",
     "sass-loader": "10.1.1"
