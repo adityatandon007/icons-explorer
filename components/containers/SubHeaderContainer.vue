@@ -5,7 +5,7 @@
         <h2 class="mb-2 font-weight-bold">{{ heading }}</h2>
       </div>
       <div class="d-flex">
-        <div class="font-12 text-secondary overflow-auto">
+        <div class="font-14 text-secondary overflow-auto">
           <p class="font-weight-normal mb-0">{{ description }}</p>
         </div>
       </div>

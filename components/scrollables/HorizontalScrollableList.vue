@@ -84,7 +84,7 @@ export default {
           { start: 576, end: 768, size: 3 },
           { start: 768, end: 992, size: 5 },
           { start: 992, end: 1200, size: 7 },
-          { start: 1200, size: 10 }
+          { start: 1200, size: 8 }
         ]
       }
     },

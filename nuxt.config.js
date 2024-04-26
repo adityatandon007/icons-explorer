@@ -1,9 +1,4 @@
-import 'dotenv/config'
-
 export default {
-  router: {
-    base: '/'
-  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Icons Explorer',
@@ -43,6 +38,12 @@ export default {
   modules: [
     '@nuxtjs/axios'
   ],
+
+  // Axios module configuration
+  axios: {
+    baseURL: 'https://api.iconscout.com/v3'
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
       babel:{

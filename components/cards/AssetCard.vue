@@ -1,9 +1,9 @@
 <template>
   <div>
-    <article title="Emoji  3D Illustration" class="asset-container">
-      <nuxt-link exact to="#" class="link-block">
+    <article :title="item.name" class="asset-container">
+      <nuxt-link exact :to="item.slug" class="link-block">
         <picture class="thumb">
-          <img alt="Emoji  3D Illustration" loading="lazy" src="" srcset="">
+          <img :alt="item.name" loading="lazy" :src="item.urls.thumb">
         </picture>
       </nuxt-link>
       <div class="overlay-content">
@@ -12,39 +12,19 @@
             <img src="~/assets/img/folder-plus.svg" alt="add to collection">
           </button>
         </div>
-        <h3 class="title"> Emoji <span class="title sr-only">3D Illustration</span></h3>
+        <h3 class="title">{{item.name}}</h3>
         <div class="footer">
           <button name="download" type="button" class="btn btn-default btn-icon btn-action">
             <img src="~/assets/img/download-asset.svg" alt="download-asset">
           </button>
         </div>
       </div>
-      
-      <!-- <a href="#" target="self" class="link-block">
-        <picture class="thumb">
-          <source type="image/webp" srcset="">
-          <img alt="Emoji  3D Illustration" loading="lazy" src="" srcset="">
-        </picture>
-      </a>
-      <div class="overlay-content">
-        <div class="header">
-        <button name="Add to collection" type="button" class="btn btn-default btn-icon btn-action">
-          <img src="~/assets/img/folder-plus.svg" alt="add to collection">
-        </button>
-        </div>
-        <h3 class="title"> Emoji <span class="title sr-only">3D Illustration</span>
-        </h3>
-        <div class="footer">
-        <button name="download" type="button" class="btn btn-default btn-icon btn-action">
-          <img src="~/assets/img/download-asset.svg" alt="download-asset">
-        </button>
-        </div>
-      </div> -->
     </article>
   </div>
 </template>
 <script>
 export default {
+  props: { item: Object }
 }
 </script>
 <style lang="scss" scoped>
