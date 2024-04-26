@@ -266,6 +266,18 @@ export default {
   },
   watch: {
     '$route.query': '$fetch'
+  },
+  head () {
+    return {
+      title: `${this.search} -  ${this.assetTypesMap[this.filters.asset.value]}`,
+      meta: [
+        {
+          hid: `${this.filters.asset.value}`,
+          name: 'description',
+          content: `${this.search} -  ${this.assetTypesMap[this.filters.asset.value]} description`
+        }
+      ]
+    }
   }
 }
 </script>
